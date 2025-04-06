@@ -1,0 +1,21 @@
+<div className="container mt-4">
+  <table>
+    <thead>
+      <tr>
+        {requiredFields.map((field, index) => (
+          field!=='id' &&<th key={index}>{field}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {fetchData.map((item: any, index: number) => (
+        <tr key={index}>
+          {requiredFields.map((field, i) => (
+            // <td key={i}>{item[field] || 'N/A'}</td>
+            field!=='id' &&<td key={i}><input type='string' value={item[field]} /></td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <table>
+      <thead>
+        <tr>
+          <% requiredFields.forEach(function(field) { %>
+            <% if (field !== 'id') { %>
+              <th><%= field %></th>
+            <% } %>
+          <% }); %>
+        </tr>
+      </thead>
+      <tbody>
+        <% fetchData.forEach(function(item, index) { %>
+          <tr>
+            <% requiredFields.forEach(function(field) { %>
+              <% if (field !== 'id') { %>
+                <td><input type="text" value="<%= item[field] || 'N/A' %>" /></td>
+              <% } %>
+            <% }); %>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  

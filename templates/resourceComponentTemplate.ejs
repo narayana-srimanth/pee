@@ -1,0 +1,34 @@
+<%- importsAndStates %>
+
+return (
+  <div>
+    <div>
+      <h2><%= operation + resName %></h2>
+    </div>
+    <%- operationsDiv %>
+    {showToast && (
+      <div
+        className="toast-container position-fixed top-20 start-50 translate-middle p-3"
+        style={{ zIndex: 1550 }}
+      >
+        <div className="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+          <div className="toast-header">
+            <strong className="me-auto">Success</strong>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+              onClick={() => setShowToast(false)}
+            ></button>
+          </div>
+          <div className="toast-body text-success text-center">Operation completed successfully!</div>
+        </div>
+      </div>
+    )}
+  </div>
+);
+
+};
+
+export default <%= operation %><%= resName %>;

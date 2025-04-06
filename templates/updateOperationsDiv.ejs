@@ -1,0 +1,35 @@
+<div className="container mt-4">
+  <table>
+    <thead>
+      <tr>
+        {requiredFields.map((field, index) => (
+          field !== 'id' && <th key={index}>{field}</th>
+        ))}
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {fetchData.map((item: any, index: number) => (
+        <tr key={index}>
+          {requiredFields.map((field, i) => (
+            field !== 'id' && (
+              <td key={i}>
+                <input
+                  type='text'
+                  value={editedData[item.id]?.[field] || item[field] || ''}
+                  // onChange={(e) =>
+                  //   handleEdit(item.id, field, e.target.value)
+                  // }
+                />
+              </td>
+            )
+          ))}
+          <td>
+            {/* <button onClick={() => handleUpdate(item.id)} className="btn btn-primary">Update</button> */}
+            <button onClick={() => handleUpdate(item.id)} className="btn btn-primary">Edit</button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
